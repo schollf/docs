@@ -18,71 +18,51 @@
         }
       ]
     },
-    "tabs": [
+    "groups": [
       {
-        "tab": "Getting Started",
-        "groups": [
-          {
-            "group": "Setup Guide",
-            "pages": [
-              "getting-started/overview",
-              "getting-started/install-addon",
-              "getting-started/api-token",
-              "getting-started/connect-accounts",
-              "getting-started/import-historical-trades"
-            ]
-          }
+        "group": "Getting Started",
+        "pages": [
+          "getting-started/overview",
+          "getting-started/install-addon",
+          "getting-started/api-token",
+          "getting-started/connect-accounts",
+          "getting-started/import-historical-trades"
         ]
       },
       {
-        "tab": "Features",
-        "groups": [
-          {
-            "group": "Core Features",
-            "pages": [
-              "features/dashboard",
-              "features/calendar",
-              "features/setups",
-              "features/tags-and-categories",
-              "features/risk-reward"
-            ]
-          },
-          {
-            "group": "Analysis",
-            "pages": [
-              "features/setup-analysis",
-              "features/tag-analysis",
-              "features/time-of-day-analysis"
-            ]
-          }
+        "group": "Core Features",
+        "pages": [
+          "features/dashboard",
+          "features/calendar",
+          "features/setups",
+          "features/tags-and-categories",
+          "features/risk-reward"
         ]
       },
       {
-        "tab": "Troubleshooting",
-        "groups": [
-          {
-            "group": "Common Issues",
-            "pages": [
-              "troubleshooting/trades-not-syncing",
-              "troubleshooting/trade-count-differences",
-              "troubleshooting/commissions-setup",
-              "troubleshooting/multiple-accounts"
-            ]
-          }
+        "group": "Analysis",
+        "pages": [
+          "features/setup-analysis",
+          "features/tag-analysis",
+          "features/time-of-day-analysis"
         ]
       },
       {
-        "tab": "Concepts",
-        "groups": [
-          {
-            "group": "How It Works",
-            "pages": [
-              "concepts/how-pnl-is-calculated",
-              "concepts/trading-metrics-explained",
-              "concepts/tags-vs-notes",
-              "concepts/supported-contracts"
-            ]
-          }
+        "group": "Concepts",
+        "pages": [
+          "concepts/how-pnl-is-calculated",
+          "concepts/trading-metrics-explained",
+          "concepts/tags-vs-notes",
+          "concepts/supported-contracts"
+        ]
+      },
+      {
+        "group": "Troubleshooting",
+        "pages": [
+          "troubleshooting/trades-not-syncing",
+          "troubleshooting/trade-count-differences",
+          "troubleshooting/commissions-setup",
+          "troubleshooting/multiple-accounts"
         ]
       }
     ]
