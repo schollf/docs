@@ -1,87 +1,96 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "TurtleMetrics Help Center",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#6366F1",
+    "light": "#818CF8",
+    "dark": "#4F46E5"
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "icon": "book-open-cover",
-          "href": "https://mintlify.com/docs"
-        },
-        {
-          "anchor": "Blog",
-          "icon": "newspaper",
-          "href": "https://mintlify.com/blog"
-        }
-      ]
-    },
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Getting Started",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Welcome",
             "pages": [
-              "index",
-              "addon",
-              "development"
+              "index"
             ]
           },
           {
-            "group": "Customization",
+            "group": "Setup Guide",
             "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+              "getting-started/overview",
+              "getting-started/install-addon",
+              "getting-started/api-token",
+              "getting-started/connect-accounts",
+              "getting-started/import-historical-trades"
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "Features",
         "groups": [
           {
-            "group": "API documentation",
+            "group": "Core Features",
             "pages": [
-              "api-reference/introduction"
+              "features/dashboard",
+              "features/calendar",
+              "features/setups",
+              "features/tags-and-categories"
             ]
           },
           {
-            "group": "Endpoint examples",
+            "group": "Analysis",
             "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "features/setup-analysis",
+              "features/tag-analysis",
+              "features/time-of-day-analysis"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Troubleshooting",
+        "groups": [
+          {
+            "group": "Common Issues",
+            "pages": [
+              "troubleshooting/trades-not-syncing",
+              "troubleshooting/trade-count-differences",
+              "troubleshooting/commissions-setup",
+              "troubleshooting/multiple-accounts"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Concepts",
+        "groups": [
+          {
+            "group": "How It Works",
+            "pages": [
+              "concepts/how-pnl-is-calculated",
+              "concepts/trading-metrics-explained",
+              "concepts/tags-vs-notes",
+              "concepts/supported-contracts"
             ]
           }
         ]
       }
-    ]
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Website",
+          "href": "https://turtlemetrics.com",
+          "icon": "globe"
+        }
+      ]
+    }
   },
   "logo": {
     "light": "/logo/light.svg",
@@ -91,32 +100,24 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@turtlemetrics.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Open App",
+      "href": "https://app.turtlemetrics.com"
     }
-  },
-  "contextual": {
-    "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "website": "https://turtlemetrics.com"
     }
+  },
+  "feedback": {
+    "thumbsRating": true
+  },
+  "modeToggle": {
+    "default": "dark"
   }
 }
