@@ -1,0 +1,63 @@
+---
+title: "Why Does My Trade Count Differ from NinjaTrader?"
+seo:
+  title: "Why TurtleMetrics Shows a Different Trade Count Than NinjaTrader"
+  description: "TurtleMetrics and NinjaTrader count trades differently. Learn how flat-to-flat trade counting works and why your trade numbers may not match."
+description: "Understanding why TurtleMetrics and NinjaTrader report different trade counts."
+---
+
+If you open TurtleMetrics and see a different number of trades than what NinjaTrader shows, don't worry — your data isn't wrong. The two platforms simply count trades differently.
+
+## How NinjaTrader counts trades
+
+NinjaTrader's Trade Performance report typically counts **individual executions or fills**. If you scale into a position with 3 separate entries and exit with 2 fills, NinjaTrader may show that as multiple trades.
+
+It also shows **total contracts traded** — so a 4-contract position counts differently than a 1-contract position.
+
+## How TurtleMetrics counts trades
+
+TurtleMetrics uses **flat-to-flat counting**. A single "trade" is everything that happens from the moment you open a position until you're completely flat again.
+
+Here's what that means in practice:
+
+<AccordionGroup>
+  <Accordion title="Example: Scaling into a position">
+    You buy 1 MES contract at 5000, then buy another 1 MES at 5005, then sell all 2 at 5020.
+
+    **NinjaTrader** might count this as 2–3 separate trades or show 4 total contracts.
+
+    **TurtleMetrics** counts this as **1 trade** — you went from flat (0 contracts) to a position, back to flat. The P&L, entry, and exit are calculated across all executions within that single position.
+  </Accordion>
+  <Accordion title="Example: Quick scalp">
+    You buy 1 ES contract at 5000 and sell it at 5010.
+
+    Both platforms count this as **1 trade**. Simple round-trip trades always match.
+  </Accordion>
+  <Accordion title="Example: Reversals">
+    You're long 2 MES, then sell 4 MES (closing your long and opening a 2-contract short), then buy 2 MES to close.
+
+    **TurtleMetrics** counts this as **2 trades**: one long trade (flat → long → flat) and one short trade (flat → short → flat).
+  </Accordion>
+</AccordionGroup>
+
+## Why flat-to-flat?
+
+Flat-to-flat counting gives you a cleaner picture of your actual trading decisions. Each trade represents a complete idea — from entry to exit — which makes analytics like win rate, average P&L per trade, and setup performance much more meaningful.
+
+If TurtleMetrics counted every individual fill as a separate trade, your metrics would be skewed by scaling behavior rather than reflecting actual strategy performance.
+
+## What about the P&L?
+
+Even though the trade count may differ, your **total P&L should match** between TurtleMetrics and NinjaTrader (before commissions, depending on configuration). The same executions go into the calculation — they're just grouped differently.
+
+If your total P&L numbers don't match, check the [commissions setup guide](/troubleshooting/commissions-setup) to make sure both platforms are using the same commission values.
+
+## Still seeing unexpected numbers?
+
+If something looks off beyond the counting methodology:
+
+- Make sure all your trades have finished syncing (there's a small delay after closing positions)
+- Check that you're looking at the same date range in both platforms
+- Verify you're comparing the same account — TurtleMetrics shows data per account
+
+Need help? Email us at [support@turtlemetrics.com](mailto:support@turtlemetrics.com) with a screenshot of both platforms and we'll sort it out.

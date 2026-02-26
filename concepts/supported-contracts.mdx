@@ -1,0 +1,60 @@
+---
+title: "Supported Futures Contracts"
+seo:
+  title: "Which Futures Contracts Does TurtleMetrics Support? — Full List"
+  description: "TurtleMetrics supports ES, MES, NQ, MNQ with full charting, plus virtually all other futures contracts for trade sync and analytics. See the complete list."
+description: "Full charting for ES/MES and NQ/MNQ. Trade sync and analytics for virtually all futures contracts."
+---
+
+TurtleMetrics supports two tiers of futures contract integration: **full-featured** contracts with price charts, and **sync-only** contracts with complete trade analytics but no charting.
+
+## Full-featured contracts
+
+These contracts include everything — automatic trade sync, P&L analytics, and **intraday price charts** on the calendar day view so you can visually review your entries and exits.
+
+| Symbol | Contract | Point Value | Tick Size |
+|--------|----------|-------------|-----------|
+| ES | E-mini S&P 500 | $50 | 0.25 |
+| MES | Micro E-mini S&P 500 | $5 | 0.25 |
+| NQ | E-mini Nasdaq-100 | $20 | 0.25 |
+| MNQ | Micro E-mini Nasdaq-100 | $2 | 0.25 |
+
+These are the most actively traded index futures, and where the majority of NinjaTrader day traders focus. Full charting support means your calendar day view shows the price action with your exact entry and exit points marked on the chart.
+
+## Sync-only contracts
+
+All other futures contracts synced from NinjaTrader are fully supported for **trade tracking and analytics** — P&L calculation, win rates, setup and tag analysis, calendar entries, and all other metrics. The only thing missing is the intraday price chart overlay.
+
+This includes but isn't limited to:
+
+**Index futures:** YM, RTY, MYM, M2K, NKD
+
+**Energy futures:** CL, MCL, NG, MNG, QM, RB, HO
+
+**Metals:** GC, MGC, SI, SIL, HG, MHG, PL
+
+**Treasuries:** ZB, ZN, ZF, ZT, UB, TN
+
+**Currencies:** 6E, 6B, 6J, 6A, 6C, M6E, M6B, DX
+
+**Agricultural:** ZC, ZW, ZS, ZL, ZM, HE, LE, GF
+
+**Softs:** CC, KC, CT, SB, OJ
+
+If your contract isn't listed here, it should still sync — TurtleMetrics accepts virtually all futures contracts from NinjaTrader. P&L is calculated using the correct point values and tick sizes for each contract.
+
+## How P&L is calculated per contract
+
+Every futures contract has a specific **point value** (how much $1 of price movement is worth per contract) and **tick size** (the minimum price increment). TurtleMetrics uses these values to calculate your P&L accurately.
+
+For example, if you go long 1 ES contract at 5000 and exit at 5010, your profit is 10 points × $50 per point = **$500**. The same move on 1 MES contract would be 10 points × $5 per point = **$50**.
+
+For a deeper explanation, see [How TurtleMetrics Calculates Your P&L](/concepts/how-pnl-is-calculated).
+
+## What about options or stocks?
+
+TurtleMetrics is **futures-only by design**. This isn't a limitation we're working around — it's a deliberate focus. By building specifically for futures day traders using NinjaTrader, every feature, metric, and design decision is optimized for how you actually trade. No stock or crypto noise cluttering your view.
+
+## Will more contracts get full charting?
+
+We're actively working on expanding chart support to additional contracts. The current focus is on the contracts most traded by our users. If you'd like to see a specific contract get full charting support, let us know at [support@turtlemetrics.com](mailto:support@turtlemetrics.com).

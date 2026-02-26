@@ -1,0 +1,84 @@
+---
+title: "Trades Not Syncing"
+seo:
+  title: "TurtleMetrics Trades Not Syncing — Troubleshooting Guide"
+  description: "Trades not appearing in TurtleMetrics? Step-by-step troubleshooting guide covering common sync issues with the NinjaTrader AddOn."
+description: "Step-by-step guide to diagnose and fix trade sync issues."
+---
+
+If your trades aren't appearing in TurtleMetrics after closing positions in NinjaTrader, work through these checks in order. Most issues are resolved in the first two steps.
+
+## 1. Wait a few seconds
+
+NinjaTrader doesn't write trade data to its database instantly. There's typically a **5+ second delay** after you close a position before the data is available for the AddOn to sync. If you just closed a trade, give it 10–15 seconds before checking TurtleMetrics.
+
+## 2. Check that the AddOn is running
+
+The TurtleMetrics Sync AddOn needs to be actively running in NinjaTrader:
+
+1. In NinjaTrader, look for the TurtleMetrics Sync window. If you don't see it, open it via **New → TurtleMetrics Sync**
+2. Check that the AddOn shows a "Connected" status
+3. Verify your API token is entered and saved
+
+<Warning>
+  The AddOn window can be minimized or hidden behind other NinjaTrader windows. Make sure it's actually open, not just installed.
+</Warning>
+
+## 3. Verify your API token
+
+An invalid or expired API token will silently prevent syncing:
+
+1. In TurtleMetrics, go to **Management → API**
+2. Check that you have an active token
+3. Copy the token and paste it into the NinjaTrader AddOn's API Key field
+4. Click **Save Settings** in the AddOn
+
+If you previously revoked and regenerated your token, the AddOn still has the old one. You need to update it manually.
+
+## 4. Check the monitored accounts
+
+The AddOn only syncs trades from accounts you've explicitly selected:
+
+1. Open the TurtleMetrics Sync window in NinjaTrader
+2. Check the **Monitored Accounts** list
+3. Make sure the account you're trading on is included
+4. If it's not listed, select it from the available accounts and add it
+
+This is a common issue when switching between sim and live accounts, or when your broker assigns a new account number.
+
+## 5. Check NinjaTrader's output window
+
+NinjaTrader's Output window often contains useful error messages:
+
+1. Go to **New → Output** in NinjaTrader
+2. Look for any lines mentioning "TurtleMetrics"
+3. Common messages include authentication errors, connection timeouts, or API issues
+
+<Info>
+  If you contact support, please include a screenshot of any TurtleMetrics-related messages from the Output window. This dramatically speeds up troubleshooting.
+</Info>
+
+## 6. Try a manual sync
+
+If live syncing isn't working but you need your trades:
+
+1. Open the TurtleMetrics Sync window
+2. Click **Sync Everything**
+3. This triggers a full re-sync of all trades from your monitored accounts
+
+This can also help after a NinjaTrader database reset or if trades were taken while the AddOn wasn't running.
+
+## 7. Check your internet connection
+
+The AddOn sends trade data to TurtleMetrics over HTTPS. If your firewall or network blocks outbound connections, syncing will fail silently. Ensure NinjaTrader can reach `app.turtlemetrics.com`.
+
+## Still stuck?
+
+Email [support@turtlemetrics.com](mailto:support@turtlemetrics.com) with:
+
+- Which symbol(s) you were trading
+- Your NinjaTrader Output window messages (screenshot)
+- Whether the issue affects all trades or specific ones
+- Whether it worked before and recently stopped
+
+We typically respond within a few hours.
