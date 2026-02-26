@@ -1,0 +1,62 @@
+---
+title: "Install the NinjaTrader AddOn"
+seo:
+  title: "How to Install the TurtleMetrics NinjaTrader AddOn"
+  description: "Step-by-step guide to downloading and installing the TurtleMetrics Sync AddOn for NinjaTrader 8. Free download, 3-minute setup."
+description: "Download and install the free TurtleMetrics Sync AddOn for NinjaTrader 8."
+---
+
+The TurtleMetrics Sync AddOn runs inside NinjaTrader and automatically sends your trade data to TurtleMetrics whenever you close a position. It's free and takes about 2 minutes to install.
+
+## Prerequisites
+
+- NinjaTrader 8 installed on Windows
+- A TurtleMetrics account ([sign up free](https://app.turtlemetrics.com/register))
+
+## Download the AddOn
+
+<Card icon="download" title="Download TurtleMetrics Sync" href="https://turtle-metrics.s3.us-east-1.amazonaws.com/1.2.1.4/TurtleMetricsSync.zip">
+  Free • Windows only • Current version: 1.2.1.4
+</Card>
+
+## Installation steps
+
+<Steps>
+  <Step title="Open NinjaTrader">
+    Make sure NinjaTrader 8 is running.
+  </Step>
+  <Step title="Import the AddOn">
+    Go to **Tools → Import → NinjaScript Add-On...** in the NinjaTrader menu bar.
+  </Step>
+  <Step title="Select the ZIP file">
+    Navigate to your Downloads folder and select the `TurtleMetricsSync.zip` file you just downloaded. You do not need to unzip it first.
+  </Step>
+  <Step title="Restart NinjaTrader">
+    Close and reopen NinjaTrader to complete the installation.
+  </Step>
+  <Step title="Verify the installation">
+    After restarting, go to **New → TurtleMetrics Sync** in the menu. If you see this option, the AddOn is installed correctly.
+  </Step>
+</Steps>
+
+## Next step
+
+Now you need to generate an API token to connect the AddOn to your TurtleMetrics account.
+
+<Card icon="arrow-right" href="/getting-started/api-token" title="Generate Your API Token">
+  Create and configure your API token.
+</Card>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I don't see 'TurtleMetrics Sync' in the New menu">
+    Make sure you fully restarted NinjaTrader after importing the AddOn. If it still doesn't appear, try importing the ZIP file again — NinjaTrader sometimes silently fails if it was busy during the first import.
+  </Accordion>
+  <Accordion title="NinjaTrader shows an import error">
+    Ensure you're using NinjaTrader 8 (not NinjaTrader 7). The AddOn is not compatible with older versions. Also verify that the ZIP file downloaded completely and wasn't corrupted.
+  </Accordion>
+  <Accordion title="Can I use TurtleMetrics on a Mac?">
+    TurtleMetrics itself is a web app that works on any device with a browser. However, the NinjaTrader AddOn requires Windows since NinjaTrader 8 only runs on Windows. If you run NinjaTrader through a Windows VM or VPS, you can install the AddOn there.
+  </Accordion>
+</AccordionGroup>
