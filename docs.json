@@ -114,5 +114,6 @@
   },
   "modeToggle": {
     "default": "dark"
-  }
+  },
+  "description": "Getting Started with TurtleMetrics"
 }
