@@ -1,97 +1,43 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Getting Started with TurtleMetrics"
+seo:
+  title: "Getting Started — TurtleMetrics Automatic Trading Journal for NinjaTrader"
+  description: "Set up TurtleMetrics in under 5 minutes. Install the NinjaTrader AddOn, generate your API token, connect accounts, and start syncing trades automatically."
+description: "Go from signup to automatic trade syncing in under 5 minutes."
 ---
 
-## Setting up
+TurtleMetrics automatically syncs every trade you take in NinjaTrader — no manual entry, no CSV exports, no copy-pasting. Once set up, your trades appear in your journal within seconds of closing a position.
 
-Get your documentation site up and running in minutes.
+## What you'll need
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+- A TurtleMetrics account ([sign up free](https://app.turtlemetrics.com/register) — 14-day trial, no credit card)
+- NinjaTrader 8 installed on Windows
+- An active NinjaTrader connection (sim or live)
 
-## Make it yours
+## Setup steps
 
-Design a docs site that looks great and empowers your users.
+The whole process takes about 3–5 minutes:
 
-<Columns cols={2}>
-  <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
-  >
-    Edit your docs locally and preview them in real time.
-  </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
+<Steps>
+  <Step title="Install the NinjaTrader AddOn">
+    Download and import the free TurtleMetrics Sync AddOn into NinjaTrader.
+    [→ Installation guide](/getting-started/install-addon)
+  </Step>
+  <Step title="Generate your API token">
+    Create a secure API token in your TurtleMetrics account to authenticate the connection.
+    [→ API token guide](/getting-started/api-token)
+  </Step>
+  <Step title="Connect your trading accounts">
+    Select which NinjaTrader accounts you want to monitor (up to 10).
+    [→ Account setup guide](/getting-started/connect-accounts)
+  </Step>
+  <Step title="Import historical trades (optional)">
+    Pull in all your past NinjaTrader trades with one click.
+    [→ Historical import guide](/getting-started/import-historical-trades)
+  </Step>
+  <Step title="Start trading">
+    That's it. Every trade you close in NinjaTrader now automatically appears in TurtleMetrics.
+  </Step>
+</Steps>
 
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
-  </Card>
-  <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
-  >
-    Add sample code to demonstrate how to use your product.
-  </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
-  </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
-
-## Need inspiration?
-
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+Once your first trade syncs, the onboarding screen disappears and you'll see your full trading dashboard.
