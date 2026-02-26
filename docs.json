@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "linden",
+  "theme": "mint",
   "name": "TurtleMetrics Help Center",
   "colors": {
     "primary": "#6366F1",
