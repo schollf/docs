@@ -1,6 +1,61 @@
 ---
 title: "Setup Performance Analysis"
+seo:
+  title: "Setup Performance Analysis — Which Trading Strategies Actually Work?"
+  description: "Compare win rates, P&L, and profit factor across all your trading setups. Data-driven strategy evaluation in TurtleMetrics."
 description: "Compare win rates, P&L, and profit factor across your trading setups."
 ---
 
-<Info>This article is coming soon.</Info>
+Setup analysis shows you how each of your trading strategies is performing — ranked by the metrics that matter. It answers the question every trader should be asking: "Which of my setups actually make money?"
+
+## How to access it
+
+Go to **Analysis → Setups** in the sidebar. You'll see a breakdown of every setup you've assigned to trades, with performance metrics for each one.
+
+## What you'll see
+
+For each setup, TurtleMetrics calculates:
+
+| Metric | What it tells you |
+|---|---|
+| **Win Rate** | Percentage of trades using this setup that were profitable |
+| **Total P&L** | How much money this setup has made or lost overall |
+| **Profit Factor** | Gross profit ÷ gross loss for trades using this setup. Above 1.0 is profitable, above 2.0 is strong |
+| **Trade Count** | How many trades you've tagged with this setup |
+| **Average P&L** | Mean profit or loss per trade — helps compare setups with different trade counts |
+
+## Reading the data
+
+The most important thing is to look at setups with enough trades to be meaningful. A setup with 3 trades and a 100% win rate doesn't tell you much. A setup with 50 trades and a 65% win rate tells you a lot.
+
+<Warning>
+  Don't draw conclusions from small samples. Wait until a setup has at least 20–30 trades before making decisions based on its performance data.
+</Warning>
+
+### What to look for
+
+- **High win rate + high profit factor** — This is a setup you should keep trading. Your edge is real.
+- **Low win rate + low profit factor** — Consider whether this setup belongs in your playbook. The data says it's costing you money.
+- **High win rate + low profit factor** — You're winning often but your losers are bigger than your winners. Look at how you're managing risk on these trades.
+- **Low win rate + high profit factor** — You lose often but your winners are much larger. This can be a valid strategy, but make sure you're comfortable with the losing streaks.
+
+## Filtering
+
+You can filter setup analysis by date range and account, just like the dashboard. This is useful for seeing how your setups perform in different market conditions or comparing performance across sim vs. live accounts.
+
+## Actionable next steps
+
+The whole point of setup analysis is to make better trading decisions:
+
+1. **Double down** on setups with proven profitability
+2. **Investigate** setups with borderline numbers — maybe they work in specific conditions
+3. **Cut** setups that consistently lose money — your data is telling you something
+
+<CardGroup cols={2}>
+  <Card icon="tags" href="/features/tag-analysis" title="Tag Analysis">
+    Combine setup data with tag insights for the full picture.
+  </Card>
+  <Card icon="crosshairs" href="/features/setups" title="Managing Setups">
+    Create or reorganize your setup categories.
+  </Card>
+</CardGroup>

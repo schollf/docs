@@ -1,6 +1,58 @@
 ---
 title: "Generate Your API Token"
+seo:
+  title: "Generate Your API Token — Connect NinjaTrader to TurtleMetrics"
+  description: "Create a secure API token in TurtleMetrics to authenticate the NinjaTrader Sync AddOn and start syncing your trades automatically."
 description: "Create a secure API token to connect the NinjaTrader AddOn to your TurtleMetrics account."
 ---
 
-<Info>This article is coming soon. In the meantime, visit **Management → API** in the TurtleMetrics app for step-by-step instructions.</Info>
+The API token is how the NinjaTrader AddOn authenticates with your TurtleMetrics account. It's a one-time setup step — once the token is saved in the AddOn, your trades sync automatically.
+
+## Creating your token
+
+<Steps>
+  <Step title="Open the API page">
+    Log in to [TurtleMetrics](https://app.turtlemetrics.com) and go to **Management → API** in the sidebar.
+  </Step>
+  <Step title="Generate a new token">
+    Click **Generate Token**. Your new API token will be displayed on screen.
+  </Step>
+  <Step title="Copy the token">
+    Click the copy button next to the token. You'll need to paste this into NinjaTrader in the next step.
+  </Step>
+  <Step title="Paste it into the AddOn">
+    In NinjaTrader, open the TurtleMetrics Sync window (**New → TurtleMetrics Sync**). Paste your token into the **API Key** field and click **Save Settings**.
+  </Step>
+</Steps>
+
+<Warning>
+  Your token is only shown once when you generate it. If you lose it, you can always generate a new one — but you'll need to update the AddOn with the new token.
+</Warning>
+
+## Regenerating a token
+
+If you need a new token (lost the old one, security concern, etc.):
+
+1. Go to **Management → API** in TurtleMetrics
+2. Click **Generate Token** to create a new one
+3. Copy the new token and paste it into the NinjaTrader AddOn
+4. Click **Save Settings** in the AddOn
+
+The old token stops working immediately when you generate a new one. The AddOn will stop syncing until you update it with the new token.
+
+## Common issues
+
+<AccordionGroup>
+  <Accordion title="AddOn shows 'Connected' but trades aren't syncing">
+    Double-check that the token in the AddOn matches the one in your TurtleMetrics account. If you regenerated your token recently, the AddOn still has the old one. Paste the current token and save again.
+  </Accordion>
+  <Accordion title="Where do I find my existing token?">
+    For security, previously generated tokens aren't displayed after creation. If you need to re-enter your token and don't have it saved, generate a new one from **Management → API**.
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<Card icon="plug" href="/getting-started/connect-accounts" title="Connect Trading Accounts">
+  Select which NinjaTrader accounts to monitor.
+</Card>

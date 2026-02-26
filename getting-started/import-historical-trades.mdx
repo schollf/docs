@@ -1,6 +1,54 @@
 ---
 title: "Import Historical Trades"
+seo:
+  title: "Import Historical NinjaTrader Trades into TurtleMetrics"
+  description: "Backfill all your past NinjaTrader trades into TurtleMetrics with one click. Start analyzing your historical performance immediately."
 description: "Backfill your past NinjaTrader trades into TurtleMetrics with a single click."
 ---
 
-<Info>This article is coming soon.</Info>
+You don't have to start from scratch. TurtleMetrics can import all your historical trades from NinjaTrader so you have analytics on your past performance from day one.
+
+## How to import
+
+<Steps>
+  <Step title="Make sure the AddOn is connected">
+    Open the TurtleMetrics Sync window in NinjaTrader and verify it shows "Connected" status with a valid API token and at least one monitored account.
+  </Step>
+  <Step title="Click Sync Everything">
+    In the TurtleMetrics Sync window, click the **Sync Everything** button. This tells the AddOn to scan your entire NinjaTrader trade database and send all historical executions to TurtleMetrics.
+  </Step>
+  <Step title="Wait for the sync to complete">
+    The import runs in the background. Depending on how many trades you have, it may take a few moments. You can check progress in NinjaTrader's Output window (**New → Output**).
+  </Step>
+</Steps>
+
+Once complete, all your past trades appear in the TurtleMetrics calendar and are included in your analytics.
+
+## What gets imported
+
+The import pulls all closed trades from your monitored accounts that exist in NinjaTrader's database. This includes all execution data needed to calculate P&L, trade duration, and contract details.
+
+<Info>
+  NinjaTrader only stores trade data that's in its local database. If you've previously cleared or reset your NinjaTrader database, trades from before the reset won't be available for import.
+</Info>
+
+## Duplicate prevention
+
+TurtleMetrics automatically prevents duplicate imports. If you click **Sync Everything** multiple times or if some trades were already synced in real-time, the system skips trades that are already in your account. There's no harm in running it again.
+
+## After importing
+
+Once your historical trades are in, you can immediately:
+
+- Browse past trading days in the [Calendar](/features/calendar)
+- See aggregate performance on the [Dashboard](/features/dashboard)
+- Start [tagging trades](/features/tags-and-categories) to build your analytics dataset
+- Assign [setups](/features/setups) to categorize your strategies
+
+<Info>
+  Historical trades won't have tags or setups assigned yet. Consider reviewing your recent trading days and tagging them — even retroactive tagging builds valuable data for your analytics.
+</Info>
+
+## Still have questions?
+
+If your historical trades aren't appearing after a sync, check the [Trades Not Syncing](/troubleshooting/trades-not-syncing) troubleshooting guide or email [support@turtlemetrics.com](mailto:support@turtlemetrics.com).

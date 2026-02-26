@@ -1,6 +1,76 @@
 ---
 title: "Trading Metrics Explained"
+seo:
+  title: "Trading Metrics Explained — Win Rate, Profit Factor, Consistency Score & More"
+  description: "What each trading metric in TurtleMetrics means, how it's calculated, and why it matters for your futures trading performance."
 description: "What win rate, profit factor, drawdown, and other key metrics mean and how they're calculated."
 ---
 
-<Info>This article is coming soon.</Info>
+TurtleMetrics tracks several key metrics across your dashboard and analysis views. Here's what each one means, how it's calculated, and what to look for.
+
+## Win Rate
+
+**What it is:** The percentage of your trades that were profitable.
+
+**Formula:** (Winning trades ÷ Total trades) × 100
+
+**What to look for:** Win rate alone doesn't tell the whole story. A 40% win rate can be extremely profitable if your winners are much larger than your losers. A 70% win rate can lose money if your losses are outsized. Always look at win rate together with profit factor.
+
+## Profit Factor
+
+**What it is:** The ratio of your gross profits to your gross losses.
+
+**Formula:** Total gross profit ÷ Total gross loss
+
+**What to look for:**
+
+| Profit Factor | Interpretation |
+|---|---|
+| Below 1.0 | You're losing money overall |
+| 1.0–1.5 | Marginally profitable — small edge |
+| 1.5–2.0 | Solid profitability |
+| Above 2.0 | Strong edge |
+| Above 3.0 | Excellent — but verify with enough sample size |
+
+Profit factor is one of the most useful single metrics because it captures both win rate and win/loss size in one number.
+
+## Consistency Score
+
+**What it is:** A measure of how stable your win rate is over time.
+
+**Why it matters:** A trader with a 55% win rate that's consistently 55% every week is in a very different position than one whose win rate swings between 20% and 90%. The consistency score helps you understand how reliable your edge is — whether your results are steady or highly variable.
+
+## Average P&L Per Trade
+
+**What it is:** Your total P&L divided by the number of trades.
+
+**Why it matters:** This tells you the expected value of each trade you take. If your average P&L per trade is positive, you have a positive expectancy — over many trades, you should make money. If it's negative, you're losing money on average with each trade you take.
+
+## Largest Win / Largest Loss
+
+**What they are:** The single biggest winning trade and single biggest losing trade in the selected period.
+
+**Why they matter:** These help you check if your P&L is being driven by a few outlier trades or by consistent performance. If your total P&L is positive but one massive winner accounts for most of it, your edge might not be as reliable as the headline number suggests.
+
+## Trade Count
+
+**What it is:** The total number of trades in the selected period, using [flat-to-flat counting](/troubleshooting/trade-count-differences).
+
+**Why it matters:** More trades means more data and more reliable metrics. It's also useful for monitoring overtrading — if your trade count is climbing but your win rate and P&L aren't keeping up, you may be forcing trades.
+
+## How metrics work across filters
+
+All metrics in TurtleMetrics recalculate dynamically when you apply filters. Change the date range, switch accounts, or look at a specific setup or tag — the numbers update to reflect exactly the slice of data you're looking at.
+
+This means you can ask questions like "What's my win rate on Monday mornings?" or "What's my profit factor on pullback setups in live accounts?" and get precise answers.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card icon="chart-line" href="/concepts/how-pnl-is-calculated" title="How P&L Is Calculated">
+    The math behind gross and net P&L.
+  </Card>
+  <Card icon="gauge" href="/features/dashboard" title="Dashboard">
+    See your metrics in action.
+  </Card>
+</CardGroup>

@@ -1,6 +1,69 @@
 ---
 title: "Tag Analysis"
+seo:
+  title: "Tag Analysis in TurtleMetrics — Measure How Behaviors Affect Your Trading"
+  description: "Analyze win rates, P&L, and profit factor by tag. Discover which trading behaviors and patterns help or hurt your performance."
 description: "Analyze how your tagged behaviors and patterns affect trading performance."
 ---
 
-<Info>This article is coming soon.</Info>
+Tag analysis turns your trade observations into performance data. Every tag you assign to a trade becomes a filter you can measure against — showing you exactly which behaviors, conditions, and patterns are helping or hurting your bottom line.
+
+## How to access it
+
+Go to **Analysis → Tags** in the sidebar. You'll see every tag you've used, with performance metrics calculated across all trades that carry that tag.
+
+## What you'll see
+
+For each tag, TurtleMetrics shows:
+
+| Metric | What it tells you |
+|---|---|
+| **Win Rate** | What percentage of trades with this tag were profitable |
+| **Total P&L** | Net impact of trades carrying this tag |
+| **Profit Factor** | Gross profit ÷ gross loss for tagged trades |
+| **Trade Count** | How many trades have this tag |
+
+## How to read tag data
+
+Tags work best when you compare them against each other. Some examples of what the data might reveal:
+
+<AccordionGroup>
+  <Accordion title="Execution quality insights">
+    If trades tagged "chased entry" have a 30% win rate while trades tagged "patient entry" sit at 62%, that's a concrete, measurable reason to stop chasing. You can put an actual dollar amount on the cost of impatience.
+  </Accordion>
+  <Accordion title="Market condition patterns">
+    If your "choppy market" tag has a 35% win rate but your "trending" tag shows 58%, you might consider sitting out range-bound days or at least reducing your size.
+  </Accordion>
+  <Accordion title="Emotional trading costs">
+    Tags like "revenge trade" or "FOMO" often reveal surprisingly large P&L drains. Seeing the exact dollar cost of revenge trading is more convincing than any trading psychology book.
+  </Accordion>
+  <Accordion title="What you're doing right">
+    Don't just track mistakes. Tags like "held to target" or "followed the plan" let you measure and reinforce your good habits.
+  </Accordion>
+</AccordionGroup>
+
+## Combining tags with setups
+
+Tag analysis becomes even more powerful when you cross-reference it with [setup analysis](/features/setup-analysis). For example, you might discover that your "Pullback to EMA" setup has a great win rate overall, but trades with that setup *plus* the "low volume" tag consistently lose. That's a highly specific, actionable insight.
+
+<Info>
+  Since trades can have multiple tags, a single trade can appear in multiple tag groups. This is by design — it lets you slice your data in many different ways.
+</Info>
+
+## Tips for getting the most out of tag analysis
+
+1. **Be consistent** — Tag every trade, not just the interesting ones. Gaps in your data skew the results.
+2. **Wait for sample size** — Tags with fewer than 20–30 trades aren't statistically reliable yet. Be patient.
+3. **Review monthly** — Check your tag performance at least once a month to catch patterns early.
+4. **Act on what you find** — The data is only useful if you let it change your behavior. If "revenge trade" has a 20% win rate, stop taking revenge trades.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card icon="tags" href="/features/tags-and-categories" title="Tags & Categories">
+    Set up and manage your tagging system.
+  </Card>
+  <Card icon="lightbulb" href="/concepts/tags-vs-notes" title="Why Tags Beat Notes">
+    The philosophy behind structured tagging.
+  </Card>
+</CardGroup>

@@ -1,6 +1,63 @@
 ---
 title: "Connect Trading Accounts"
+seo:
+  title: "Connect NinjaTrader Accounts to TurtleMetrics — Account Setup Guide"
+  description: "Select which NinjaTrader accounts to monitor with TurtleMetrics. Supports up to 10 accounts including sim, live, and prop firm accounts."
 description: "Select which NinjaTrader accounts to monitor and sync with TurtleMetrics."
 ---
 
-<Info>This article is coming soon. See the [troubleshooting guide for multiple accounts](/troubleshooting/multiple-accounts) for tips on account setup.</Info>
+TurtleMetrics syncs trades from the specific NinjaTrader accounts you choose to monitor. You can track up to 10 accounts, and each one gets completely isolated analytics — no data mixing between accounts.
+
+## Selecting accounts to monitor
+
+<Steps>
+  <Step title="Open the TurtleMetrics Sync window">
+    In NinjaTrader, go to **New → TurtleMetrics Sync**. Make sure your API token is already saved (see the [API token guide](/getting-started/api-token) if not).
+  </Step>
+  <Step title="View available accounts">
+    The AddOn lists all NinjaTrader accounts currently connected to your platform — sim accounts, live accounts, and any prop firm accounts.
+  </Step>
+  <Step title="Select the accounts you want to track">
+    Check the accounts you want TurtleMetrics to monitor. Only trades from selected accounts will be synced.
+  </Step>
+  <Step title="Save your settings">
+    Click **Save Settings**. The AddOn immediately begins monitoring the selected accounts.
+  </Step>
+</Steps>
+
+## What gets synced
+
+Once an account is selected, every trade you close on that account is automatically sent to TurtleMetrics. Each account appears separately in the app — you can filter your dashboard, calendar, and analytics by account.
+
+## Adding or removing accounts later
+
+You can change which accounts are monitored at any time:
+
+1. Open the TurtleMetrics Sync window in NinjaTrader
+2. Check or uncheck accounts as needed
+3. Click **Save Settings**
+
+New accounts start syncing immediately. Removed accounts stop syncing, but their historical data stays in TurtleMetrics.
+
+## Common scenarios
+
+<AccordionGroup>
+  <Accordion title="Switching between sim and live">
+    Many traders practice on sim before going live. Select both accounts to track performance across both — TurtleMetrics keeps them completely separate so you can compare your sim results against live trading.
+  </Accordion>
+  <Accordion title="Prop firm accounts">
+    If your broker or prop firm assigns you a new account number, you'll need to add the new account in the AddOn. The old account's data remains in TurtleMetrics.
+  </Accordion>
+  <Accordion title="Account not showing up">
+    The AddOn can only list accounts that NinjaTrader currently knows about. Make sure you're connected to your data feed and the account is visible in NinjaTrader's Account Selector before looking for it in the AddOn.
+  </Accordion>
+  <Accordion title="10-account limit">
+    TurtleMetrics supports up to 10 monitored accounts per user. This covers the vast majority of trading setups. If you need more, reach out to [support@turtlemetrics.com](mailto:support@turtlemetrics.com).
+  </Accordion>
+</AccordionGroup>
+
+## Next step
+
+<Card icon="clock-rotate-left" href="/getting-started/import-historical-trades" title="Import Historical Trades">
+  Pull in your past NinjaTrader trades with one click.
+</Card>

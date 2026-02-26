@@ -1,6 +1,86 @@
 ---
 title: "How TurtleMetrics Calculates P&L"
+seo:
+  title: "How TurtleMetrics Calculates P&L — Gross and Net Profit Explained"
+  description: "Understand how TurtleMetrics calculates gross and net P&L from your futures trades, including point values, tick sizes, and commission handling."
 description: "How gross and net P&L is calculated from your trade executions, including point values and commissions."
 ---
 
-<Info>This article is coming soon.</Info>
+TurtleMetrics calculates your profit and loss directly from the execution data synced from NinjaTrader. Here's exactly how it works.
+
+## Gross P&L
+
+The basic formula for any futures trade is:
+
+**P&L = Price Movement × Point Value × Number of Contracts**
+
+Every futures contract has a specific **point value** — how much one full point of price movement is worth per contract. TurtleMetrics knows the point value for every supported contract and uses it automatically.
+
+### Examples
+
+<AccordionGroup>
+  <Accordion title="ES (E-mini S&P 500)">
+    Point value: **$50** per point, tick size: 0.25
+
+    You go long 1 ES at 5000.00 and exit at 5010.00.
+    That's 10 points × $50 = **$500 profit**.
+  </Accordion>
+  <Accordion title="MES (Micro E-mini S&P 500)">
+    Point value: **$5** per point, tick size: 0.25
+
+    Same trade on MES — long 1 at 5000.00, exit at 5010.00.
+    That's 10 points × $5 = **$50 profit**.
+  </Accordion>
+  <Accordion title="NQ (E-mini Nasdaq-100)">
+    Point value: **$20** per point, tick size: 0.25
+
+    You short 2 NQ at 18000.00 and cover at 17980.00.
+    That's 20 points × $20 × 2 contracts = **$800 profit**.
+  </Accordion>
+  <Accordion title="MNQ (Micro E-mini Nasdaq-100)">
+    Point value: **$2** per point, tick size: 0.25
+
+    Short 1 MNQ at 18000.00, cover at 18015.00.
+    That's -15 points × $2 = **-$30 loss**.
+  </Accordion>
+</AccordionGroup>
+
+## Net P&L
+
+Net P&L subtracts commissions from your gross P&L:
+
+**Net P&L = Gross P&L − Commissions**
+
+TurtleMetrics reads commission data from NinjaTrader's commission templates. For this to be accurate, you need to have commission templates properly configured in NinjaTrader and applied to your accounts. See the [commissions setup guide](/troubleshooting/commissions-setup) for details.
+
+## Flat-to-flat trade grouping
+
+TurtleMetrics groups executions into trades using **flat-to-flat** logic. A "trade" starts when you go from zero contracts to a position, and ends when you return to zero contracts. All executions within that window — scaling in, partial exits, etc. — are grouped into a single trade with one combined P&L.
+
+This means if you buy 1 contract at 5000, buy another at 5005, and sell all 2 at 5020, TurtleMetrics shows this as one trade, not two. The P&L accounts for the blended entry price across all fills.
+
+For more on how this affects trade counting, see [Why Does My Trade Count Differ from NinjaTrader?](/troubleshooting/trade-count-differences).
+
+## Precision
+
+All P&L calculations use decimal precision — not floating-point approximations. This prevents rounding errors from accumulating across hundreds or thousands of trades, which is especially important for micro contracts where individual tick values are small.
+
+## Verifying your numbers
+
+Your total gross P&L in TurtleMetrics should match NinjaTrader's Trade Performance report (before commissions). If the numbers don't line up:
+
+1. Make sure you're comparing the same date range and account
+2. Check that all trades have finished syncing
+3. Review your [commission setup](/troubleshooting/commissions-setup) if net P&L is off
+4. Remember that trade *counts* may differ due to [flat-to-flat grouping](/troubleshooting/trade-count-differences), but total P&L should match
+
+## Related
+
+<CardGroup cols={2}>
+  <Card icon="calculator" href="/concepts/trading-metrics-explained" title="Trading Metrics Explained">
+    What win rate, profit factor, and other metrics mean.
+  </Card>
+  <Card icon="list" href="/concepts/supported-contracts" title="Supported Contracts">
+    Point values and tick sizes for every supported contract.
+  </Card>
+</CardGroup>

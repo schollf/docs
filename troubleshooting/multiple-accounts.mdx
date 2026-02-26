@@ -1,6 +1,71 @@
 ---
 title: "Managing Multiple Accounts & Copy-Trading"
+seo:
+  title: "Managing Multiple NinjaTrader Accounts in TurtleMetrics"
+  description: "Best practices for tracking multiple NinjaTrader accounts, comparing performance across accounts, and handling copy-trading setups."
 description: "Best practices for tracking multiple NinjaTrader accounts and copy-trading setups."
 ---
 
-<Info>This article is coming soon.</Info>
+TurtleMetrics supports up to 10 monitored accounts per user. Each account's data is completely isolated — separate P&L, separate analytics, separate everything. This makes it straightforward to track multiple trading accounts without data getting mixed together.
+
+## Setting up multiple accounts
+
+Adding accounts is done in the NinjaTrader AddOn:
+
+1. Open the TurtleMetrics Sync window (**New → TurtleMetrics Sync**)
+2. Check each account you want to monitor from the available list
+3. Click **Save Settings**
+
+All selected accounts begin syncing immediately. For a detailed walkthrough, see the [Connect Trading Accounts](/getting-started/connect-accounts) guide.
+
+## How account isolation works
+
+Every metric in TurtleMetrics is calculated per account. When you switch between accounts in the app, you're looking at completely independent data sets:
+
+- **Dashboard** — shows P&L, win rate, profit factor for the selected account only
+- **Calendar** — shows trades from the selected account only
+- **Analysis** — all setup, tag, and time-of-day metrics are scoped to the selected account
+
+This means your sim account performance never inflates your live account numbers, and your prop firm evaluation results stay separate from your personal account.
+
+## Common multi-account setups
+
+<AccordionGroup>
+  <Accordion title="Sim + Live">
+    Track both your sim and live accounts to compare performance. This is especially useful when transitioning from sim to live — you can see if your edge holds up with real money on the line.
+  </Accordion>
+  <Accordion title="Personal + Prop Firm">
+    Keep your personal trading account separate from prop firm evaluation accounts. Each has different rules and constraints, so isolated analytics give you a clearer picture of each one.
+  </Accordion>
+  <Accordion title="Strategy-specific accounts">
+    Some traders use different accounts for different strategies. By monitoring each one separately, you get clean performance data per strategy without any cross-contamination.
+  </Accordion>
+  <Accordion title="Copy-trading across accounts">
+    If you execute the same trades across multiple accounts (copy-trading), each account tracks independently. You'll see the same trades in each account's calendar with P&L adjusted for that account's contract size and commission setup.
+  </Accordion>
+</AccordionGroup>
+
+## Account changes and broker reassignments
+
+If your broker assigns you a new account number (common with prop firm evaluations or account migrations):
+
+1. The old account and its data remain in TurtleMetrics
+2. Add the new account number in the NinjaTrader AddOn
+3. New trades will sync under the new account
+
+The old account's history isn't lost — it just becomes a separate, complete record of that account's trading.
+
+## The 10-account limit
+
+TurtleMetrics monitors up to 10 NinjaTrader accounts. This is a deliberate design choice that covers the vast majority of trading setups. If you're hitting this limit and need more, email [support@turtlemetrics.com](mailto:support@turtlemetrics.com) and we'll work something out.
+
+## Related
+
+<CardGroup cols={2}>
+  <Card icon="plug" href="/getting-started/connect-accounts" title="Connect Accounts">
+    Step-by-step guide to adding accounts.
+  </Card>
+  <Card icon="gauge" href="/features/dashboard" title="Dashboard">
+    View per-account performance metrics.
+  </Card>
+</CardGroup>

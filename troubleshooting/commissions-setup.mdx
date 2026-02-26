@@ -1,6 +1,71 @@
 ---
 title: "Setting Up Commissions for Accurate Net P&L"
+seo:
+  title: "Setting Up Commissions in NinjaTrader for Accurate TurtleMetrics P&L"
+  description: "Configure NinjaTrader commission templates so TurtleMetrics can calculate accurate net P&L. Common issues and how to fix them."
 description: "Configure commission templates in NinjaTrader so TurtleMetrics shows accurate net P&L."
 ---
 
-<Info>This article is coming soon.</Info>
+TurtleMetrics reads commission data from NinjaTrader to calculate your net P&L. If commissions aren't configured correctly in NinjaTrader, your gross P&L will still be accurate but your net P&L numbers will be off.
+
+## How commissions work
+
+NinjaTrader uses **commission templates** — preset configurations that define how much you pay per contract, per side (entry and exit). TurtleMetrics reads these values when syncing your trades and subtracts the appropriate commission from each trade's gross P&L.
+
+## Setting up commission templates
+
+<Steps>
+  <Step title="Open Commission Templates in NinjaTrader">
+    Go to **Tools → Options → Commissions** in NinjaTrader.
+  </Step>
+  <Step title="Create or edit a template">
+    Set up a commission template that matches what your broker actually charges. This is typically a per-contract, per-side rate. For example, if your broker charges $2.04 per side per contract, enter that value.
+  </Step>
+  <Step title="Apply the template to your account">
+    Make sure the template is applied to each account you're trading on. Without this step, NinjaTrader won't associate commissions with your trades.
+  </Step>
+</Steps>
+
+<Warning>
+  Commission templates must be set up **before** you take trades for the commissions to be recorded correctly. Trades taken without a commission template will show $0 in commissions.
+</Warning>
+
+## Common issues
+
+<AccordionGroup>
+  <Accordion title="Net P&L doesn't match my broker statement">
+    The most common cause is a mismatch between your NinjaTrader commission template and your actual broker rates. Double-check the per-contract, per-side rate in your template against your broker's fee schedule. Also check for exchange fees and NFA fees that some brokers include separately.
+  </Accordion>
+  <Accordion title="Commissions showing as $0">
+    This usually means no commission template is applied to the account in NinjaTrader. Go to **Tools → Options → Commissions**, verify a template exists, and check that it's assigned to your account.
+  </Accordion>
+  <Accordion title="Historical trades have wrong commissions">
+    If you changed your commission template after taking trades, the historical trades may have been recorded with the old rate (or no rate). The commission stored is whatever was configured at the time the trade was synced. A **Sync Everything** re-import won't retroactively change commissions on previously synced trades.
+  </Accordion>
+  <Accordion title="Different commission rates for different contracts">
+    Some brokers charge different rates for different products (e.g., lower rates for micros). Make sure your NinjaTrader commission template handles this correctly — you may need separate templates for different contract types.
+  </Accordion>
+</AccordionGroup>
+
+## Verifying your setup
+
+After configuring commissions:
+
+1. Take a trade (or use sim) and let it sync to TurtleMetrics
+2. Compare the net P&L in TurtleMetrics to what NinjaTrader's Trade Performance shows
+3. If they match, you're good. If not, check your commission template rates
+
+<Info>
+  Your **gross P&L** should always match between platforms regardless of commission setup. If gross P&L is off, the issue is with trade sync, not commissions — check the [trades not syncing guide](/troubleshooting/trades-not-syncing).
+</Info>
+
+## Related
+
+<CardGroup cols={2}>
+  <Card icon="calculator" href="/concepts/how-pnl-is-calculated" title="How P&L Is Calculated">
+    Understand the full P&L calculation including commissions.
+  </Card>
+  <Card icon="triangle-exclamation" href="/troubleshooting/trade-count-differences" title="Trade Count Differences">
+    Why trade counts may differ between platforms.
+  </Card>
+</CardGroup>

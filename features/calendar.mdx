@@ -1,6 +1,70 @@
 ---
 title: "Calendar View"
+seo:
+  title: "TurtleMetrics Calendar View — Review Trading Days and Tag Trades"
+  description: "Browse your trading days, review individual trades with price charts, and assign tags and setups from the calendar view."
 description: "Review individual trading days, walk through trades, and assign setups and tags."
 ---
 
-<Info>This article is coming soon.</Info>
+The calendar is where your daily trading review happens. It shows every day you traded, lets you walk through your trades one by one, and is the primary place where you assign tags and setups.
+
+## Browsing your trading days
+
+The calendar displays a monthly view with each trading day marked. Days with trades show a summary — how many trades you took and your P&L for that day. Click any day to open the day view.
+
+## The day view
+
+When you click into a trading day, you see all the trades from that session listed out. Each trade shows:
+
+- **Entry and exit times** — when you opened and closed the position
+- **Symbol** — which contract you traded
+- **Side** — long or short
+- **P&L** — how much the trade made or lost
+- **Contracts** — position size
+
+Click on any individual trade to see its full details.
+
+## Price charts
+
+For ES, MES, NQ, and MNQ trades, the day view includes **intraday price charts** with your exact entry and exit points marked. This lets you visually review how the trade played out in the context of the day's price action — where you got in, where you got out, and what happened around your trade.
+
+<Info>
+  Price charts are currently available for ES/MES and NQ/MNQ only. All other futures contracts show full trade details and analytics, but without the chart overlay. We're expanding chart support to more contracts over time.
+</Info>
+
+## Assigning tags and setups
+
+The calendar day view is where you tag your trades. For each trade:
+
+1. Click on the trade to open its details
+2. Select a **setup** — the strategy or pattern you used for this trade
+3. Click the tag area and assign one or more **tags** — observations about execution, market conditions, or anything else you want to track
+
+Tags and setups are saved immediately. The whole process takes a few seconds per trade.
+
+<Warning>
+  Tag your trades the same day while everything is fresh. Trying to remember what happened three weeks ago defeats the purpose of structured journaling.
+</Warning>
+
+## Building your daily review habit
+
+The most valuable thing you can do in TurtleMetrics is spend 5–10 minutes after each trading session reviewing your trades in the calendar:
+
+1. Open today's date
+2. Walk through each trade
+3. Assign a setup to each one
+4. Tag any notable observations — good execution, mistakes, market conditions
+5. Move on
+
+This builds the dataset that powers all of your [setup analysis](/features/setup-analysis), [tag analysis](/features/tag-analysis), and [time-of-day insights](/features/time-of-day-analysis). The more consistently you tag, the more useful those analytics become.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card icon="crosshairs" href="/features/setups" title="Trading Setups">
+    Learn how to create and manage your setup categories.
+  </Card>
+  <Card icon="tags" href="/features/tags-and-categories" title="Tags & Categories">
+    Set up your tagging system for structured trade analysis.
+  </Card>
+</CardGroup>
