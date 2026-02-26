@@ -43,7 +43,8 @@
               "features/dashboard",
               "features/calendar",
               "features/setups",
-              "features/tags-and-categories"
+              "features/tags-and-categories",
+              "features/risk-reward"
             ]
           },
           {
